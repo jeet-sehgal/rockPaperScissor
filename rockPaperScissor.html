@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f595e9a7d3.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <nav>
+        <div class="center">
+            <img src="images/logo.svg" alt="logo">
+            <div class="scoreContainer">
+                <!-- <h2>SCORE</h2>
+                <div id="score">0</div> -->
+                <h2>SCORE : <span id="score">0</span></h2>
+                <h2>HIGH-SCORE : <span id="highScore">0</span></h2>
+            </div>
+        </div>
+
+        <div class="playArea">
+            <div class="choose">
+                <div class="tri">
+                    <!-- <img src="images/bg-triangle.svg" alt=""> -->
+                    <div class="top">
+                        <button id="paper" onclick="play(0)">
+                            <div class="mainpaper">
+                                <div class="paper"><img src="images/icon-paper.svg" alt=""></div>
+                            </div>
+                        </button>
+                        <button id="scissor" onclick="play(1)">
+                            <div class="mainscissor">
+                                <div class="scissor"><img src="images/icon-scissors.svg" alt=""></div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="mainrock">
+                        <button id="rock" onclick="play(2)">
+                            <div class="rock"><img src="images/icon-rock.svg" alt=""></div>
+                        </button>
+                    </div>
+                    <!-- </button> -->
+                </div>
+            </div>
+            <div class="resultContainer">
+
+                <div class="win">
+
+                    <div class="user" id="user"></div>
+                    <div class="comp" id="comp"></div>
+                </div>
+                <div class="name">
+                    <h3 class="y">You Picked</h3>
+                    <h3 class="c">Computer Picked</h3>
+                </div>
+                <div class="result">
+                    <h3 id="result"></h3>
+                    <button id="tryAgain" onclick="tryAgain()">PLAY AGAIN</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="rules ">
+            <button onclick="ruleDes()" id="rule">RULES</button>
+        </div>
+
+    </nav>
+    <div class="ruleDes" id="ruleDes">
+        <button id="cross" onclick="cross()"><i class="fa-solid fa-xmark"></i></button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Grey+Qo&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Barlow Semi Condensed", sans-serif;
+        }
+
+        body {
+            background-image: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+            min-height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+        }
+
+        nav {
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 120px;
+            width: 100vw;
+
+        }
+
+        .center {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid rgba(128, 128, 128, 0.502);
+            border-radius: 5px;
+            width: 250px;
+            padding: 10px 15px;
+            font-weight: 300;
+        }
+
+        .center img {
+            height: 50px;
+        }
+
+        .scoreContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: aliceblue;
+            height: 50px;
+            width: 120px;
+            color: rgba(0, 157, 255, 0.662);
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        #score ,#highScore{
+            color: #575562;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .tri {
+            background-image: url(images/bg-triangle.svg);
+            background-size: 150px;
+            background-position: center top;
+            background-repeat: no-repeat;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            height: 150px;
+        }
+        
+
+        .mainpaper,
+        .mainscissor,
+        .mainrock {
+            width: 90px;
+            border-radius: 50%;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainpaper {
+            background-image: radial-gradient(circle, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+        }
+
+        .mainrock {
+            background-image: radial-gradient(circle, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            position: absolute;
+            top: 300px;
+            /* left:280px; */
+
+        }
+
+        .mainrock button {
+            border-radius: 50%;
+        }
+
+        .mainscissor {
+            background-image: radial-gradient(circle, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            flex-direction: row;
+            position: absolute;
+            top: 190px;
+        }
+
+        .tri button {
+            border: none;
+            border-radius: 50%;
+        }
+
+        .paper,
+        .scissor,
+        .rock {
+            background-color: aliceblue;
+            border-radius: 50%;
+            padding: 20px;
+            height: 70px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .paper img,
+        .scissor img,
+        .rock img {
+            height: 40px;
+        }
+
+        .rules button {
+            padding: 10px 30px;
+            color: aliceblue;
+            border: none;
+            font-weight: 500;
+            font-size: 15px;
+            background-color: transparent;
+            /* border-radius: 5px; */
+        }
+
+        .rules {
+            border: 2px solid rgba(255, 255, 255, 0.42);
+            border-radius: 5px;
+            /* margin-top: 20px; */
+
+        }
+
+        .ruleDes {
+            height: 250px;
+            overflow-y: hidden;
+            background-image: url(images/mobile-rules-modal.jpg);
+            background-size: 220px;
+            width: 220px;
+            height: 270px;
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 270px;
+        }
+
+        .ruleDes button {
+            display: none;
+            position: absolute;
+            top: 14px;
+            left: 200px;
+            border: none;
+            color: grey;
+            /* border-radius: 50%; */
+        }
+
+        
+
+        .resultContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            display: none;
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            /* padding: 0px 20px; */
+            padding-left: 45px;
+            padding-right: 10px;
+            padding-top: 10px;
+        }
+
+        .name h3.c {
+            width: 90px;
+            word-wrap: break-word;
+            color: aliceblue;
+        }
+
+        .name h3.y {
+            width: 60px;
+            word-wrap: break-word;
+            color: aliceblue;
+        }
+
+        #tryAgain {
+            background-color: aliceblue;
+            color: rgb(114, 108, 108);
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            border: none;
+        }
+
+        .win {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            padding: 0px 20px;
+        }
+
+        .win button {
+            border: none;
+        }
+
+        .result {
+            padding-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .result h3#result {
+            color: aliceblue;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .win div {
+            border-radius: 50%;
+        }
+
+        .win #user div,
+        .win #comp div {
+            position: static;
+        }
+        .hide{
+            display: none;
+        }
+
+        @media screen and (min-width:768px) {
+            nav {
+                gap: 90px;
+            }
+
+            .center {
+                width: 600px;
+                padding: 10px 20px;
+                border: 5px solid rgba(128, 128, 128, 0.502);
+                /* display: none; */
+                border-radius: 10px;
+            }
+
+            .center img {
+                height: 100px;
+            }
+
+            .scoreContainer {
+
+                height: 100px;
+                width: 200px;
+                gap: 5px;
+                font-size: 15px;
+            }
+
+            #score,#highScore {
+
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .tri {
+                background-size: 230px;
+                height: 230px;
+            }
+
+            .mainpaper,
+            .mainscissor,
+            .mainrock {
+                width: 120px;
+                height: 120px;
+            }
+
+            .mainrock {
+                top: 370px;
+
+            }
+
+            .top {
+                width: 330px;
+                top: 210px;
+            }
+
+            .paper,
+            .scissor,
+            .rock {
+                height: 95px;
+                width: 95px;
+            }
+
+            .paper img,
+            .scissor img,
+            .rock img {
+                height: 60px;
+            }
+
+            .rules button {
+                font-size: 20px;
+            }
+
+            .rules {
+                border: 2px solid rgba(255, 255, 255, 0.42);
+                border-radius: 5px;
+
+            }
+
+            .ruleDes {
+                background-size: 270px;
+                /* background-c: ; */
+                width: 270px;
+                height: 340px;
+            }
+
+            .ruleDes button {
+                top: 15px;
+                left: 245px;
+                font-size: 20px;
+            }
+
+            /* .resultContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                display: none;
+            } */
+
+            .name {
+                width: 70vw;
+                /* padding: 0px 20px; */
+                padding-left: 50px;
+                padding-right: 10px;
+                padding-top: 10px;
+            }
+
+            .name h3.c {
+                width: 150px;
+            }
+
+            .name h3.y {
+                width: 130px;
+            }
+
+            #tryAgain {
+                color: red;
+                padding: 10px 25px;
+                font-size: 20px;
+            }
+
+            .win {
+                width: 70vw;
+            }
+
+             .result {
+                padding-top: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+                position: relative;
+                bottom:200px;
+            }
+
+            /*.result h3#result {
+                color: aliceblue;
+                font-size: 50px;
+                font-weight: 600;
+            } */
+        }
